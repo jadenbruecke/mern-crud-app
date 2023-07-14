@@ -12,6 +12,6 @@ React.js
 Next.js
 
 # description
-The app should contains two simple routes: /contracts and /usage. 
+The app contains two simple routes: /contracts and /usage. 
 On /contracts page, one can view, add, update or delete contracts.
 On /usage page, one can select between the different contracts and calculate the contract price.

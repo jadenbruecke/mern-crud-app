@@ -34,7 +34,7 @@ const UsageIndex = ({ contracts }) => {
       setUsage((prevValue) => ({
         oneTimeFee: prevValue.oneTimeFee,
         usageFee: prevValue.usageFee,
-        usageAmount: value < 0 ? 0 : Math.round(value)
+        usageAmount: !value || value < 0 ? 0 : Math.round(value)
       }))
     }
   }

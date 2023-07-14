@@ -10,9 +10,9 @@ function ContractCard(props) {
     return (
         <div className="card col-sm-6 col-md-4 col-xl-3 text-center mx-2 mb-3">
             <div className="card-body">
-                <h5 className="card-title">Contract Id: {props.id}</h5>
+                <h5 className="card-title">{props.machineName}</h5>
                 <ul className="list-group list-group-flush">
-                    <li className="list-group-item">Machine Name: {props.machineName}</li>
+                    <li className="list-group-item">Id: {props.id.substring(0,6)}...</li>
                     <li className="list-group-item">One-Time Fee: {props.oneTimeFee}</li>
                     <li className="list-group-item">Usage Fee: {props.usageFee}</li>
                 </ul>

@@ -81,9 +81,9 @@ const Form = ({ formId, contractForm, forNewContract = true }) => {
     let err = {}
     if (!form.machineName) err.machineName = 'Machine name is required'
     if (!form.oneTimeFee) err.oneTimeFee = 'One-time fee is required'
-    if (form.oneTimeFee <= 0) err.oneTimeFee = 'One-time fee is lower than 0'
+    if (form.oneTimeFee < 0) err.oneTimeFee = 'One-time fee is lower than 0'
     if (!form.usageFee) err.usageFee = 'Usage fee is required'
-    if (form.usageFee <= 0) err.usageFee = 'Usage fee is required'
+    if (form.usageFee < 0) err.usageFee = 'Usage fee is lower than 0'
     console.log(err)
     return err
   }

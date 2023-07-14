@@ -100,7 +100,7 @@ const UsageIndex = ({ contracts }) => {
             <label>Contract Price</label>
             <input
               type="number"
-              value={usage.oneTimeFee + usage.usageFee * usage.usageAmount}
+              value={Math.round((usage.oneTimeFee + usage.usageFee * usage.usageAmount)*100)/100}
               name="contractPrice"
               className="form-control"
               aria-label="Disabled input example"

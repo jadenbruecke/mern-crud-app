@@ -4,8 +4,15 @@ import Link from 'next/link'
 
 function ContractCard(props) {
     const handleClick = () => {
-        props.onDelete(props.id)
+        var result = confirm("Want to delete?")
+        if (result==true) {
+            props.onDelete(props.id)
+            return true
+        } else {
+            return false
+        }
     }
+
 
     return (
         <div className="card col-sm-6 col-md-4 col-xl-3 text-center mx-2 mb-3">

@@ -5,9 +5,9 @@ import ContractModel from '@/model/ContractModel'
 
 const UsageIndex = ({ contracts }) => {
   const [usage, setUsage] = useState({
-    oneTimeFee: "",
-    usageFee: "",
-    usageAmount: ""
+    oneTimeFee: 0,
+    usageFee: 0,
+    usageAmount: 0
   })
 
   const handleKeyDown = (event) => {
@@ -19,11 +19,11 @@ const UsageIndex = ({ contracts }) => {
     console.log("Target name: " + name, "Target value: " + value)
     if (name === "selectedContract") {
       if (value === 'DEFAULT') {
-        setUsage((prevValue) => ({
-          oneTimeFee: "",
-          usageFee: "",
-          usageAmount: ""
-        }))
+        setUsage({
+          oneTimeFee: 0,
+          usageFee: 0,
+          usageAmount: 0
+        })
       } else {
         const filteredContract = contracts.filter((contract) => (value === contract._id))[0]
         /* Tracking filtered contract */

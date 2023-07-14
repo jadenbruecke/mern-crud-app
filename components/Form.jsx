@@ -152,9 +152,9 @@ const Form = ({ formId, contractForm, forNewContract = true }) => {
 
       {
         Object.keys(errors).length === 0 ? null :
-          <div class="alert alert-danger alert-dismissible fade show">
+          <div className="alert alert-danger alert-dismissible fade show">
             <strong>Error!</strong> A problem has been occurred while submitting your data.
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <button type="button" className="btn-close" databsdismiss="alert"></button>
           </div>
       }
 

@@ -44,6 +44,7 @@ const ContractsIndex = ({ contracts }) => {
             onDelete={handleDelete}
           />
         ))}
+        {message ? null : <p>{message}</p>}
       </div>
     </>
   )

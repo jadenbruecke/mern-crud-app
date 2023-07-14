@@ -4,6 +4,7 @@ const contractSchema = new mongoose.Schema({
   machineName: {
     /* The name of the machine */
     type: String,
+    unique: true,
     required: [true, 'Please provide a name for the machine.'],
     maxlength: [60, 'Name cannot be more than 60 characters'],
   },

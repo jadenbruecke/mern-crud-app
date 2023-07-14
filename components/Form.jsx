@@ -67,7 +67,7 @@ const Form = ({ formId, contractForm, forNewContract = true }) => {
 
   const handleChange = (e) => {
     const target = e.target
-    const value = target.value
+    const value = (target.name !== 'machineName') ? (Math.floor(target.value*100)/100) : target.value
     const name = target.name
 
     setForm({

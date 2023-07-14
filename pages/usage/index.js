@@ -10,10 +10,6 @@ const UsageIndex = ({ contracts }) => {
     usageAmount: 0
   })
 
-  const handleKeyDown = (event) => {
-    return (event.nativeEvent.keyCode != 8 && event.nativeEvent.keyCode == 0 || (event.nativeEvent.keyCode >= 48 && event.nativeEvent.keyCode <= 57))
-  }
-
   const handleChange = (event) => {
     const { name, value } = event.target
     console.log("Target name: " + name, "Target value: " + value)
@@ -38,7 +34,7 @@ const UsageIndex = ({ contracts }) => {
       setUsage((prevValue) => ({
         oneTimeFee: prevValue.oneTimeFee,
         usageFee: prevValue.usageFee,
-        usageAmount: value < 0 ? 0 : value
+        usageAmount: value < 0 ? 0 : Math.round(value)
       }))
     }
   }
@@ -91,11 +87,10 @@ const UsageIndex = ({ contracts }) => {
             <input
               type="number"
               min="0"
-              step="0.01"
+              step="1"
               value={usage.usageAmount}
               name="changedAmount"
               className="form-control"
-              onKeyDown={handleKeyDown}
               onChange={handleChange}
               required
             />

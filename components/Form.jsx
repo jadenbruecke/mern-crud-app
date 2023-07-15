@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import { mutate } from 'swr'
+import Link from 'next/link'
+
 
 const Form = ({ formId, contractForm, forNewContract = true }) => {
   const router = useRouter()
@@ -143,9 +145,12 @@ const Form = ({ formId, contractForm, forNewContract = true }) => {
             />
           </div>
 
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary mx-2">
             Submit
           </button>
+          <Link href="/contracts" className="btn btn-secondary mx-2">
+            Cancel
+          </Link>
         </form>
         <p>{message}</p>
       </div>

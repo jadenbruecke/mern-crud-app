@@ -12,7 +12,6 @@ const UsageIndex = ({ contracts }) => {
 
   const handleChange = (event) => {
     const { name, value } = event.target
-    console.log("Target name: " + name, "Target value: " + value)
     if (name === "selectedContract") {
       if (value === 'DEFAULT') {
         setUsage({
@@ -22,8 +21,6 @@ const UsageIndex = ({ contracts }) => {
         })
       } else {
         const filteredContract = contracts.filter((contract) => (value === contract._id))[0]
-        /* Tracking filtered contract */
-        console.log(filteredContract)
         setUsage((prevValue) => ({
           oneTimeFee: filteredContract.oneTimeFee,
           usageFee: filteredContract.usageFee,

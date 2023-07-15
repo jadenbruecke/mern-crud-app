@@ -23,7 +23,7 @@ function ContractCard(props) {
                     <li className="list-group-item">One-Time Fee: {props.oneTimeFee}</li>
                     <li className="list-group-item">Usage Fee: {props.usageFee}</li>
                 </ul>
-                <Link href="/[id]/edit" as={`/${props.id}/edit`} legacyBehavior>
+                <Link href="/contracts/[id]/edit" as={`/contracts/${props.id}/edit`} legacyBehavior>
                     <button className="btn btn-primary mx-2">Edit</button>
                 </Link>
                 <button className="btn btn-danger" onClick={handleClick}>

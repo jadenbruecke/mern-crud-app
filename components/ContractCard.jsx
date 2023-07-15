@@ -13,7 +13,6 @@ function ContractCard(props) {
         }
     }
 
-
     return (
         <div className="card col-sm-6 col-md-4 col-xl-3 text-center mx-2 mb-3">
             <div className="card-body">
@@ -26,7 +25,7 @@ function ContractCard(props) {
                 <Link href="/contracts/[id]/edit" as={`/contracts/${props.id}/edit`} legacyBehavior>
                     <button className="btn btn-primary mx-2">Edit</button>
                 </Link>
-                <button className="btn btn-danger" onClick={handleClick}>
+                <button className="btn btn-danger mx-2" onClick={handleClick}>
                     Delete
                 </button>
             </div>

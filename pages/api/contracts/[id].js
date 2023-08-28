@@ -13,11 +13,11 @@ export default async function handler(req, res) {
         /* Get a model by its ID */
         case 'GET':
             try {
-            const pet = await ContractModel.findById(id)
-            if (!pet) {
+            const contract = await ContractModel.findById(id)
+            if (!contract) {
                 return res.status(400).json({ success: false })
             }
-            res.status(200).json({ success: true, data: pet })
+            res.status(200).json({ success: true, data: contract })
             } catch (error) {
             res.status(400).json({ success: false })
             }
@@ -26,14 +26,14 @@ export default async function handler(req, res) {
         /* Edit a model by its ID */
         case 'PUT' :
             try {
-            const pet = await ContractModel.findByIdAndUpdate(id, req.body, {
+            const contract = await ContractModel.findByIdAndUpdate(id, req.body, {
                 new: true,
                 runValidators: true,
             })
-            if (!pet) {
+            if (!contract) {
                 return res.status(400).json({ success: false })
             }
-            res.status(200).json({ success: true, data: pet })
+            res.status(200).json({ success: true, data: contract })
             } catch (error) {
             res.status(400).json({ success: false })
             }
@@ -42,8 +42,8 @@ export default async function handler(req, res) {
         /* Delete a model by its ID */
         case 'DELETE' :
             try {
-            const deletedContract = await ContractModel.deleteOne({ _id: id })
-            if (!deletedContract) {
+            const contractToDelete = await ContractModel.deleteOne({ _id: id })
+            if (!contractToDelete) {
                 return res.status(400).json({ success: false })
             }
             res.status(200).json({ success: true, data: {} })

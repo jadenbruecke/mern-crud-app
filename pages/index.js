@@ -1,4 +1,4 @@
-import SectionCard from "@/components/SubSection"
+import SectionCard from "@/components/SectionCard"
 
 
 function Home() {
